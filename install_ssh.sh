@@ -12,8 +12,10 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 
 # Disable password authentication
-sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sudo sed -i 's/^#\?PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
-sudo sed -i 's/^#\?PubkeyAuthentication no/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+sudo mv /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+sudo wget -P /etc/ssh/ https://raw.githubusercontent.com/aksenov-fx/bash/main/sshd_config
+
+#sudo sed -i 's/^#\?PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+#sudo sed -i 's/^#\?PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
 
 sudo systemctl restart ssh
