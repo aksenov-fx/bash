@@ -22,4 +22,4 @@
     #sudo sed -i 's/^#\?PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
 
 # Restart ssh
-sudo systemctl restart ssh
+    sudo systemctl restart ssh
