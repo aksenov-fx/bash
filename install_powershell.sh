@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euxo pipefail
+
 echo "Updating package list..."
     sudo apt-get update
 
@@ -19,7 +21,7 @@ echo "Installing PowerShell..."
     sudo apt-get install -y powershell
 
 echo "Enabling SSHRemoting..."
-    pwsh -Command "Install-Module -Name Microsoft.PowerShell.Remotingtools"
+    pwsh -Command "Install-Module -Name Microsoft.PowerShell.Remotingtools -Force -AllowClobber"
 
 echo "Enabling PSRemoting..."
     pwsh -Command "Enable-SSHRemoting -Force"
